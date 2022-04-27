@@ -220,6 +220,10 @@ contract SpaceLegends is ERC721Enumerable, Ownable, ERC2981 {
     publicPaused = _state;
   }
 
+  function pauseWhitelist(bool _state) public onlyOwner {
+    whitelistPaused = _state;
+  }
+
   function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721Enumerable, IERC165, ERC165Storage) returns (bool) {
     return super.supportsInterface(interfaceId);
   }
